@@ -10,46 +10,23 @@ DQN (discrete deep reinforcement learning)
 All controllers target a satellite plant model with moment of inertia J = 11.4 kg·m² (Khosravi & Sarhadi, 2016).
 
 Repository Structure:
-satellite-attitude-control/
-│
-├── Controllers/
-│   │
-│   ├── Classical/
-│   │   │
-│   │   ├── PID_Relay/
-│   │   │   ├── sim_relay.slx                      # Simulink model
-│   │   │   ├── relay_sim.m                        # MATLAB implementation
-│   │   │   └── plots/                             # Results visualizations
-│   │   │
-│   │   └── PID_Deadzone_Relay/
-│   │       ├── sim_relay_deadzone.slx             # Simulink model
-│   │       ├── relay_deadzone_sim.m               # MATLAB implementation
-│   │       └── plots/                             # Results visualizations
-│   │
-│   └── Reinforcement_Learning/
-│       │
-│       ├── DDPG/
-│       │   ├── Double_integrator_model3.m         # Plant model
-│       │   ├── resetfuncJS2model3.m               # Reset function
-│       │   ├── stepfunctionJS23.m                 # Step function
-│       │   ├── rlsimulate.m                       # Testing script
-│       │   └── plots/                             # Results visualizations
-│       │
-│       └── DQN/
-│           ├── main_script_DQN.m                  # DQN training script
-│           ├── resetfuncDQN.m                     # Reset function
-│           ├── stepfunctionDQN.m                  # Step function
-│           ├── simulate_DQN.m                     # Testing script
-│           └── plots/                             # Results visualizations
-│
-├── Results_Comparison/
-│   └── comparison_summary.m                       # (Optional) cross-controller analysis
-│
-├── docs/
-│   └── project_report.pdf
-│
-├── README.md                                      # Main project README (this file)
-└── .gitignore
+The repository is organized by controller type, with each controller containing all necessary files (Simulink models, MATLAB code, and results plots).
+Controllers/Classical/
+PID_Relay/ — Classical PID + Relay: sim_relay.slx, relay_sim.m, plots/
+PID_Deadzone_Relay/ — Classical PID + Deadzone + Relay: sim_relay_deadzone.slx, relay_deadzone_sim.m, plots/
+
+Controllers/Reinforcement_Learning/
+DDPG/ — Deep Deterministic Policy Gradient agent
+Double_integrator_model3.m (plant model), resetfuncJS2model3.m, stepfunctionJS23.m, main_script_DDPG.m (training), rlsimulate.m (testing), plots/
+
+DQN/ — Deep Q-Network agent
+main_script_DQN.m (training), resetfuncDQN.m, stepfunctionDQN.m, simulate_DQN.m (testing), plots/
+Root Level
+
+docs/ — project_report.pdf
+README.md — This file
+.gitignore — Git ignore rules
+
 Installation & Setup
 Requirements:
 MATLAB R2022b or later
