@@ -11,6 +11,7 @@ All controllers target a satellite plant model with moment of inertia J = 11.4 k
 
 Repository Structure:
 The repository is organized by controller type, with each controller containing all necessary files (Simulink models, MATLAB code, and results plots).
+
 Controllers/Classical/
 PID_Relay/ — Classical PID + Relay: sim_relay.slx, relay_sim.m, plots/
 PID_Deadzone_Relay/ — Classical PID + Deadzone + Relay: sim_relay_deadzone.slx, relay_deadzone_sim.m, plots/
