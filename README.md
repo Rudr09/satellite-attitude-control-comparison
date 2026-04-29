@@ -17,44 +17,44 @@ satellite-attitude-control/
 │   ├── Classical/
 │   │   │
 │   │   ├── PID_Relay/
-│   │   │   ├── sim_relay.slx                 # Simulink model
-│   │   │   ├── relay_sim.m                   # MATLAB implementation
-|   |   |   ├── plots\                    
+│   │   │   ├── sim_relay.slx                      # Simulink model
+│   │   │   ├── relay_sim.m                        # MATLAB implementation
+│   │   │   └── plots/                             # Results visualizations
 │   │   │
 │   │   └── PID_Deadzone_Relay/
-│   │       ├── sim_relay_deadzone.slx        # Simulink model
-│   │       ├── relay_deadzone_sim.m          # MATLAB implementation
-│   │       ├── plots\  
-|   |
+│   │       ├── sim_relay_deadzone.slx             # Simulink model
+│   │       ├── relay_deadzone_sim.m               # MATLAB implementation
+│   │       └── plots/                             # Results visualizations
+│   │
 │   └── Reinforcement_Learning/
 │       │
 │       ├── DDPG/
-│       │   ├── Double_integrator_model3.m                 # DDPG training script
-│       │   ├── resetfuncJS2model3.m                       # Reset function
-│       │   ├── stepfunctionJS23.m                         # Step function
-│       │   ├── rlsimulate.m                               # Testing script
-│       |   ├── plots\  
-|       |
+│       │   ├── Double_integrator_model3.m         # Plant model
+│       │   ├── resetfuncJS2model3.m               # Reset function
+│       │   ├── stepfunctionJS23.m                 # Step function
+│       │   ├── rlsimulate.m                       # Testing script
+│       │   └── plots/                             # Results visualizations
+│       │
 │       └── DQN/
 │           ├── main_script_DQN.m                  # DQN training script
 │           ├── resetfuncDQN.m                     # Reset function
 │           ├── stepfunctionDQN.m                  # Step function
 │           ├── simulate_DQN.m                     # Testing script
-│           ├── plots\  
-|
+│           └── plots/                             # Results visualizations
+│
 ├── Results_Comparison/
-│   └── comparison_summary
+│   └── comparison_summary.m                       # (Optional) cross-controller analysis
 │
 ├── docs/
-│   ├── project_report.pdf
+│   └── project_report.pdf
 │
 ├── README.md                                      # Main project README (this file)
 └── .gitignore
-
 Installation & Setup
 Requirements:
 MATLAB R2022b or later
 Simulink
+
 Steps to run:
 For classical controllers, open both Simulink and the MATLAB code file and run the code with all the paramter inputs for the results
 For DRL controllers, open all the four files (training script, reset function, step function and testing funcrion). Ensure they are contained in the same folder.
