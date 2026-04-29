@@ -3,8 +3,11 @@ An aerospace  engineering project comparing 4 controllers- PID+Relay, PID+Relay 
 
 This Final Year Project (BEng Hons Aerospace Engineering, University of Hertfordshire) implements and benchmarks four attitude control approaches:
 PID + Relay (classical)
+
 PID + Relay + Deadzone (classical)
+
 DDPG (continuous deep reinforcement learning)
+
 DQN (discrete deep reinforcement learning)
 
 All controllers target a satellite plant model with moment of inertia J = 11.4 kg·m² (Khosravi & Sarhadi, 2016).
@@ -26,6 +29,7 @@ Root Level
 
 docs/ — project_report.pdf
 README.md — This file
+
 .gitignore — Git ignore rules
 
 Installation & Setup
@@ -41,9 +45,13 @@ If there is no re-training required, simply run the testing script file.
 
 Test Case Performance:
 Nominal step (θ₀=0.5 rad): All controllers succeed
+
 Large angle (θ₀=5 rad): PID variants succeed; DDPG may diverge (Case 2 failure)
+
 Disturbance (0.5 N·m): Classical + RL handled; Ki helps steady-state rejection
+
 Inertia variation (J→1000): Classical controllers fail; RL more robust
+
 Detumbling (ω₀=10 rad/s): Classical fails; RL approaches target asymptotically
 
 Known Limitations:
