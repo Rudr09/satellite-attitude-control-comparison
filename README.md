@@ -55,7 +55,6 @@ Installation & Setup
 Requirements:
 MATLAB R2022b or later
 Simulink
-
 Steps to run:
 For classical controllers, open both Simulink and the MATLAB code file and run the code with all the paramter inputs for the results
 For DRL controllers, open all the four files (training script, reset function, step function and testing funcrion). Ensure they are contained in the same folder.
