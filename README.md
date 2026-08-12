@@ -1,11 +1,11 @@
 # satellite-attitude-control-comparison
 An aerospace  engineering project comparing 4 controllers- PID+Relay, PID+Relay +Deadzone, DDPG and DQN for a single-axis satellite attitude control across 5 test
 
-cases : Baseline tracking, Large angle recovery, Steady disturbance, Inertia Variation and Detumbling
+**Cases** : Baseline tracking, Large angle recovery, Steady disturbance, Inertia Variation and Detumbling
 
 This Final Year Project (BEng Hons Aerospace Engineering, University of Hertfordshire) implements and benchmarks four attitude control approaches:
 
-PID + Relay (classical)
+# PID + Relay (classical)
 
 PID + Relay + Deadzone (classical)
 
@@ -15,7 +15,7 @@ DQN (discrete deep reinforcement learning)
 
 All controllers target a satellite plant model with moment of inertia J = 11.4 kg·m² (Khosravi & Sarhadi, 2016).
 
-Repository Structure:
+**Repository Structure:**
 
 The repository is organized by controller type, with each controller containing all necessary files (Simulink models, MATLAB code, and results plots).
 
