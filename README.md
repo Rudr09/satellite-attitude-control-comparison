@@ -38,43 +38,43 @@ The repository is organized by controller type, with each controller containing 
 
 **Requirements:**
 
-MATLAB R2022b or later
+- MATLAB R2022b or later
 
-Simulink
+- Simulink
 
 **Steps to run:**
 
-For classical controllers, open both Simulink and the MATLAB code file and run the code with all the paramter inputs for the results
+- For classical controllers, open both Simulink and the MATLAB code file and run the code with all the paramter inputs for the results
 
-For DRL controllers, open all the four files (training script, reset function, step function and testing funcrion). Ensure they are contained in the same folder.
+- For DRL controllers, open all the four files (training script, reset function, step function and testing funcrion). Ensure they are contained in the same folder.
 
-If the agent is to be retrained, update the training parameters with your choice of values and run the training script file.
+- If the agent is to be retrained, update the training parameters with your choice of values and run the training script file.
 
-If there is no re-training required, simply run the testing script file.
+- If there is no re-training required, simply run the testing script file.
 
 **Test Case Performance:**
 
-Nominal step (θ₀=0.5 rad): All controllers succeed
+- Nominal step (θ₀=0.5 rad): All controllers succeed
 
-Large angle (θ₀=5 rad): PID variants succeed; DDPG may diverge (Case 2 failure)
+- Large angle (θ₀=5 rad): PID variants succeed; DDPG may diverge (Case 2 failure)
 
-Disturbance (0.5 N·m): Classical + RL handled; Ki helps steady-state rejection
+- Disturbance (0.5 N·m): Classical + RL handled; Ki helps steady-state rejection
 
-Inertia variation (J→1000): Classical controllers fail; RL more robust
+- Inertia variation (J→1000): Classical controllers fail; RL more robust
 
-Detumbling (ω₀=10 rad/s): Classical fails; RL approaches target asymptotically
+- Detumbling (ω₀=10 rad/s): Classical fails; RL approaches target asymptotically
 
 **Known Limitations:**
 
-RL Stochasticity: Results vary across runs due to random seeds and experience replay sampling
+- RL Stochasticity: Results vary across runs due to random seeds and experience replay sampling
 
-Mitigation: Fixed seed (rng(42)) and multiple training runs recommended
+- Mitigation: Fixed seed (rng(42)) and multiple training runs recommended
 
-DDPG Case 2 divergence: Large angle recovery with stochastic agent and isDone boundary condition
+- DDPG Case 2 divergence: Large angle recovery with stochastic agent and isDone boundary condition
 
-Root cause: Training distribution mismatch; agent leaves exploration space
+- Root cause: Training distribution mismatch; agent leaves exploration space
 
-Scope exclusions: Double DQN, Dueling architecture, Transformers remain out of scope
+- Scope exclusions: Double DQN, Dueling architecture, Transformers remain out of scope
 
 **PID Gains:**
 
