@@ -5,13 +5,10 @@ An aerospace  engineering project comparing 4 controllers- PID+Relay, PID+Relay 
 
 This Final Year Project (BEng Hons Aerospace Engineering, University of Hertfordshire) implements and benchmarks four attitude control approaches:
 
-# PID + Relay (classical)
-
-PID + Relay + Deadzone (classical)
-
-DDPG (continuous deep reinforcement learning)
-
-DQN (discrete deep reinforcement learning)
+**PID + Relay** (classical)
+**PID + Relay + Deadzone** (classical)
+**DDPG** (continuous deep reinforcement learning)
+**DQN** (discrete deep reinforcement learning)
 
 All controllers target a satellite plant model with moment of inertia J = 11.4 kg·m² (Khosravi & Sarhadi, 2016).
 
@@ -43,15 +40,15 @@ README.md — This file
 
 .gitignore — Git ignore rules
 
-Installation & Setup
+# Installation & Setup
 
-Requirements:
+**Requirements:**
 
 MATLAB R2022b or later
 
 Simulink
 
-Steps to run:
+**Steps to run:**
 
 For classical controllers, open both Simulink and the MATLAB code file and run the code with all the paramter inputs for the results
 
@@ -61,7 +58,7 @@ If the agent is to be retrained, update the training parameters with your choice
 
 If there is no re-training required, simply run the testing script file.
 
-Test Case Performance:
+**Test Case Performance:**
 
 Nominal step (θ₀=0.5 rad): All controllers succeed
 
@@ -73,7 +70,7 @@ Inertia variation (J→1000): Classical controllers fail; RL more robust
 
 Detumbling (ω₀=10 rad/s): Classical fails; RL approaches target asymptotically
 
-Known Limitations:
+**Known Limitations:**
 
 RL Stochasticity: Results vary across runs due to random seeds and experience replay sampling
 
@@ -85,7 +82,7 @@ Root cause: Training distribution mismatch; agent leaves exploration space
 
 Scope exclusions: Double DQN, Dueling architecture, Transformers remain out of scope
 
-PID Gains:
+**PID Gains:**
 
 Kp = 20;    % Proportional gain
 
@@ -93,7 +90,7 @@ Ki = 0.12;  % Integral gain (steady-state disturbance rejection)
 
 Kd = 39.7;  % Derivative gain (damping)
 
-DDPG Setup:
+**DDPG Setup:**
 
 % Actor/Critic network: 2 hidden layers, 128 neurons
 
@@ -107,7 +104,7 @@ DDPG Setup:
 
 % actInfo bounds: [-5, 5] 
 
-DQN Setup:
+**DQN Setup:**
 
 % Action space: [-1, 0, 1]
 
@@ -119,7 +116,7 @@ DQN Setup:
 
 % Replay buffer: 1e5 capacity, batch size 32
 
-Verification & Validation Strategy
+**Verification & Validation Strategy**
 
 This project demonstrates systematic V&V discipline for control systems:
 
@@ -141,7 +138,7 @@ This project demonstrates systematic V&V discipline for control systems:
 **Insight:** Discrete action space (DQN) provides inherent robustness to 
 parameter uncertainty—valuable for spacecraft in uncertain environments.
 
-References:
+**References:**
 
 Khosravi, A., & Sarhadi, P. (2016). Automatic control of satellite attitude using neural networks. Automatika, 57(4), 951–961.
 
@@ -170,4 +167,4 @@ Khosravi & Sarhadi (2016) for the foundational plant model
 
 Defence Date: 17th April 2026
 Report Submission: March 2026
-Project Timeline: September 2025 – February 2026
+Project Timeline: September 2025 – May 2026
