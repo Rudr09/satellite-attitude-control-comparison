@@ -1,4 +1,4 @@
-# satellite-attitude-control-comparison
+# Operational Analysis & Performance Modelling: Satellite Attitude Control Systems
 An aerospace  engineering project comparing 4 controllers- PID+Relay, PID+Relay +Deadzone, DDPG and DQN for a single-axis satellite attitude control across 5 test
 
 **Cases** : Baseline tracking, Large angle recovery, Steady disturbance, Inertia Variation and Detumbling
@@ -40,7 +40,7 @@ README.md — This file
 
 .gitignore — Git ignore rules
 
-# Installation & Setup
+**Installation & Setup**
 
 **Requirements:**
 
