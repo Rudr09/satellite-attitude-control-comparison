@@ -16,33 +16,15 @@ All controllers target a satellite plant model with moment of inertia J = 11.4 k
 
 The repository is organized by controller type, with each controller containing all necessary files (Simulink models, MATLAB code, and results plots).
 
- **Satellite Attitude Control Research**
-│
-├── Controllers/
-│   ├── Classical/                          — Traditional fixed-gain controllers
-│   │   ├── PID_Relay/                      — PID + Relay (discrete on-off thruster control)
-│   │   │   ├── sim_relay.slx                  — Simulink model: rigid-body dynamics + PID relay control
-│   │   │   └── relay_sim.m                    — MATLAB script: simulation execution & performance analysis
-│   │   │
-│   │   └── PID_Deadzone_Relay/             — PID + Deadzone + Relay (improved chattering mitigation)
-│   │       ├── sim_relay_deadzone.slx         — Simulink model with deadzone to reduce actuator cycling
-│   │       └── relay_deadzone_sim.m           — MATLAB script: simulation & metrics extraction
-│   │
-│   └── Reinforcement_Learning/             — Modern learning-based controllers
-│       ├── DDPG/                           — Deep Deterministic Policy Gradient (continuous control)
-│       │   ├── Double_integrator_model3.m     — Plant dynamics model (Euler equations, sensor noise, actuator constraints)
-│       │   ├── stepfunctionJS23.m             — Environment step function (reward shaping, state transitions)
-│       │   ├── resetfuncJS2model3.m           — Reset function (scenario initialization)
-│       │   └── rlsimulate.m                   — Testing/evaluation script for trained DDPG agent
-│       │
-│       └──  DQN/                            — Deep Q-Network (discrete on-off thruster control)
-│           ├── main_script_DQN.m              — Training script: DQN agent setup, learning loop, performance tracking
-│           ├── stepfunctionDQN.m              — Environment step function (discrete action space: +1, -1, 0 Nm)
-│           ├── resetfuncDQN.m                 — Reset function (scenario initialization & randomization)
-│           └── simulate_DQN.m                 — Testing script: evaluate trained DQN across test scenarios
-│
-└── docs/                                   — Documentation & theory reference
-    └── (Project documentation, design methodology, key findings)
+**Controllers/Classical/**
+
+- PID_Relay/ — Contains sim_relay.slx (Simulink model) and relay_sim.m (simulation script)
+- PID_Deadzone_Relay/ — Contains sim_relay_deadzone.slx and relay_deadzone_sim.m
+
+**Controllers/Reinforcement_Learning/**
+
+- DDPG/ — Contains Double_integrator_model3.m (plant model), stepfunctionJS23.m, resetfuncJS2model3.m, and rlsimulate.m (testing script)
+- DQN/ — Contains main_script_DQN.m (training), stepfunctionDQN.m, resetfuncDQN.m, and simulate_DQN.m (testing script)
 
 **Root Level**
 
