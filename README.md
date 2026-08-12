@@ -119,6 +119,28 @@ DQN Setup:
 
 % Replay buffer: 1e5 capacity, batch size 32
 
+Verification & Validation Strategy
+
+This project demonstrates systematic V&V discipline for control systems:
+
+**Verification Approach:**
+- Defined mission-level requirements: settling time <5s, overshoot <5%, 
+  robustness to 88× parameter variation
+- Developed test matrix across 5 operational scenarios: nominal tracking, 
+  large-angle recovery, disturbance rejection, inertia variation, detumbling
+- For each controller (PID, DDPG, DQN), logged performance metrics across 
+  all scenarios
+- Compared results against defined requirements
+
+**Key Results:**
+- DQN: Achieved robustness to parameter variation (partial control under 88× 
+  inertia) but slower nominal settling
+- DDPG: Fastest nominal response but complete failure under inertia variation
+- PID: Perfect disturbance rejection but requires tuning; steady-state chattering
+
+**Insight:** Discrete action space (DQN) provides inherent robustness to 
+parameter uncertainty—valuable for spacecraft in uncertain environments.
+
 References:
 
 Khosravi, A., & Sarhadi, P. (2016). Automatic control of satellite attitude using neural networks. Automatika, 57(4), 951–961.
